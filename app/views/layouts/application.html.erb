@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <title>Depot</title>
+  <meta charset="utf-8">
+  <title>Pragprog Booksオンラインストア</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
-
-<%= yield %>
-
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Pragmatic Bookshelf" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li><a href="http://www....">ホーム</a></li>
+        <li><a href="http://www..../faq">よくある質問</a></li>
+        <li><a href="http://www..../news">ニュース</a></li>
+        <li><a href="http://www..../contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+  <div id="main">
+    <%= yield %>
+  </div>
+  </div>
 </body>
 </html>
