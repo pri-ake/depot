@@ -41,9 +41,9 @@ Product.create([
   },
   {
       id: 4,
-    title: 'リンゴ',
+    title: 'リンゴ写真集',
     description: %{<p>
-      赤くて美味しいよ。
+      赤くて美味しそうなリンゴの写真集。
       </p>},
     image_url: 'apple.jpg',
     price: 100.00
