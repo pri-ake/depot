@@ -55,8 +55,9 @@ class CartsController < ApplicationController
   # DELETE /carts/1.json
   def destroy
     @cart.destroy
+    session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
+      format.html { redirect_to store_url, notice: 'カートは現在空です' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +65,18 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      @cart = Cart.find(params[:id])
+      # @cart = Cart.find(params[:id])
+      begin
+        @cart = Cart.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        logger.error "無効なカート#{params[:id]}にアクセスしようとしました"
+        redirect_to store_url, notice: '無効なカートです'
+      # else
+      #   respont_to do |format|
+      #     format.html # show.html.erb
+      #     format.json {render json: @cart}
+      #   end
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

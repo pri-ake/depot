@@ -2,6 +2,11 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
+<p>アクセス回数：<%= @counter %></p>
+<!-- 下記でもOK -->
+<!-- <%= "アクセス回数：#{@counter}" %> -->
+
+
 <h1>Pragmaticカタログ</h1>
 
 <% @products.each do |product| %>
