@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Dave Thomas
+  address: MyText
+  email: dave@example.org
+  pay_type: 現金
+
+two:
+  name: Akemi Himeda
+  address: MyText
+  email: akemi@example.org
+  pay_type: クレジットカード

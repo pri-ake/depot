@@ -9,6 +9,7 @@
       <td><%= item.quantity %>&times;</td>
       <td><%= item.product.title %></td>
       <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+      <td><%= button_to('削除', item, method: :delete)%></td>
     </tr>
   <% end %>
 
@@ -16,10 +17,9 @@
     <td colspan="2">合計</td>
     <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
   </tr>
-
 </table>
 
-
+<%= button_to('チェックアウト', new_order_path, method: :get) %>
 <%= button_to('カートを空にする', @cart, method: :delete, data: {confirm: '本当によいですか？'}) %>
 
 <%= link_to('買い物を続ける', store_path) %>
