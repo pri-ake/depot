@@ -1,0 +1,14 @@
+Dear <%= @order.name %> 様
+
+Pragmaticストアでのご注文、誠にありがとうございます。
+
+あなたがご注文されたのは以下の品目です。
+
+<%#= render @order.line_items %>
+<% @order.line_items.each do |line_item| %>
+  <%= sprintf("%2d x %s",
+              line_item.quantity,
+              truncate(line_item.product.title, length: 50)) %>
+<% end %>
+
+あなたのご注文を発送する際には、別途電子メールでご連絡いたします。

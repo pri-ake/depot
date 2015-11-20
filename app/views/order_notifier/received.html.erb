@@ -1,0 +1,15 @@
+<h1>Dear <%= @order.name %> 様</h1>
+
+<p>Pragmaticストアでのご注文、誠にありがとうございます。</p>
+
+<p>あなたがご注文されたのは以下の品目です。</p>
+
+<%#= render @order.line_items %>
+<ul><% @order.line_items.each do |line_item| %>
+  <li><%= sprintf("%2d x %s",
+              line_item.quantity,
+              truncate(line_item.product.title, length: 50)) %></li>
+  <% end %>
+</ul>
+
+<p>あなたのご注文を発送する際には、別途電子メールでご連絡いたします。</p>
