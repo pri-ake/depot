@@ -1,0 +1,81 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ja:
+
+  activerecord:
+    models:
+      order:        "注文"
+    attributes:
+      order:
+        address:    "ご住所"
+        name:       "お名前"
+        email:      "メールアドレス"
+        pay_type:   "お支払方法"
+
+    errors:
+      messages:
+        inclusion:  "選択肢に含まれない値です"
+        blank:      "必須入力です"
+
+  errors:
+    template:
+      body:         "エラーが発生しました"
+      header:
+        one:        "%{model}データに１つエラーがあります"
+        other:      "%{model}データに%{count}個のエラーがあります"
+
+
+  layouts:
+    application:
+      title:        "Pragmatic Bookshelf"
+      home:         "ホーム"
+      questions:    "よくある質問"
+      news:         "ニュース"
+      contact:      "お問い合わせ"
+
+  store:
+    index:
+      title_html:     "Pragmaticカタログ"
+      add_html:       "カートに入れる"
+
+  orders:
+    new:
+      legend:           "お客様の情報を入力してください"
+    form:
+      name:             "お名前"
+      address_html:     "ご住所"
+      email:            "メールアドレス"
+      pay_type:         "お支払方法"
+      pay_prompt_html:  "お支払方法を選択してください"
+      submit:           "注文する"
+
+
+  number:
+    currency:
+      format:
+        unit:        "円"
+        precision:   2
+        separator:   ""
+        delimiter:   "."
+        format:      "%n&nbsp;%u"
+
+
