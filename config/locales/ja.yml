@@ -68,6 +68,10 @@ ja:
       pay_prompt_html:  "お支払方法を選択してください"
       submit:           "注文する"
 
+  # carts:
+  #   _cart:
+  #     cart:             "Pragmaticカート"
+  #     total_price:      "合計"
 
   number:
     currency:
